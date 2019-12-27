@@ -1,0 +1,31 @@
+.compareSelected{
+    background-color: #f2f2f2;
+}
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .fa  { left:  0px;}
+.right-addon .fa { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.tableCompare td, .tableCompare th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tableCompare th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}

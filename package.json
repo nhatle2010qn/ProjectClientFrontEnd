@@ -1,0 +1,54 @@
+{
+  "name": "customer-page",
+  "version": "0.1.0",
+  "homepage": "http://reactproject.github.io/projectfrontend",
+  "private": true,
+  "dependencies": {
+    "aphrodite": "^2.4.0",
+    "axios": "^0.19.0",
+    "gh-pages": "^2.1.1",
+    "joi-browser": "^13.4.0",
+    "query-string": "^6.9.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-instantsearch-dom": "^5.7.0",
+    "react-joi-validation": "^1.7.0",
+    "react-js-pagination": "^3.0.2",
+    "react-modal": "^3.10.1",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.0",
+    "react-scripts": "3.1.2",
+    "react-star-ratings": "^2.3.0",
+    "react-start": "^1.1.2",
+    "react-toastify": "^5.4.1",
+    "react-with-styles": "^4.0.1",
+    "react-with-styles-interface-aphrodite": "^6.0.1",
+    "redux": "^4.0.4",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "rheostat": "^4.0.1"
+  },
+  "scripts": {
+    "start": "set PORT=5000 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "projectfrontend -d build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
