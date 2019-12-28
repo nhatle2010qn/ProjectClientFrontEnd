@@ -35,10 +35,10 @@ class Review extends Component {
     }
     onSubmit = async (event) =>{
         event.preventDefault();
-        if(this.state.reviewInput == ''){
+        if(this.state.reviewInput === ''){
             toast.error('Please enter to review input');
         }
-        if(this.state.rating == 0){
+        if(this.state.rating === 0){
             toast.error('Please rating to review');
         }
         if(this.state.reviewInput !== '' && this.state.rating !== 0 && this.state.currentUser !== null){

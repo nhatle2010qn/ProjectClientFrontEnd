@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 function CartItem(props) {
     let {
@@ -11,7 +12,7 @@ function CartItem(props) {
                 <img src={"http://localhost:44322/wwwroot/Image/Products/" + cart.mainUrl} alt="" />
             </div>
             <div className="product-body">
-                <h3 className="product-name"><a href="#">{cart.productName}</a></h3>
+                <h3 className="product-name"><Link>{cart.productName}</Link></h3>
                 <h4 className="product-price"><span className="qty">{cart.quantity}x</span>${cart.productPrice}</h4>
             </div>
             <button className="delete"><i className="fa fa-close"></i></button>

@@ -1,4 +1,4 @@
-import { ADD_PRODUCT_TO_CART, LOAD_PRODUCT_IN_CART, ADD_QUANTITY, REMOVE_PRODUCT, POST_CART, DELETE_CART } from "./actionTypes";
+import { ADD_PRODUCT_TO_CART, LOAD_PRODUCT_IN_CART, ADD_QUANTITY, REMOVE_PRODUCT, DELETE_CART } from "./actionTypes";
 import axios from '../axios/axios';
 
 export const addProductToCart = (cart) => dispatch => {

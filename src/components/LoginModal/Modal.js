@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RegisterModal from './RegisterModal';
 import LoginModal from './LoginModal';
 import Modal from 'react-modal';
+import {Link} from 'react-router-dom';
 
 class ModalLogin extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class ModalLogin extends Component {
     }
 
     handleBody = () => {
-        if (this.state.body == 'lg') {
+        if (this.state.body === 'lg') {
 
             return (
                 <LoginModal
@@ -74,10 +75,10 @@ class ModalLogin extends Component {
                     <div className="Modal-content" style={{width: '700px', height: 'auto'}}>
                         <div className="Modal-header row nav nav-tabs" style={{ display: "flex", alignItems: "center", justifyContent: 'center' }}>
                             <div className="col-lg-6 active" style={{ textAlign: 'center', cursor: 'pointer'}} >
-                                <a onClick={() => this.handleClick('lg')}>Login</a>
+                                <Link onClick={() => this.handleClick('lg')}>Login</Link>
                             </div>
                             <div className="col-lg-6" style={{ textAlign: 'center', cursor: 'pointer' }}>
-                                <a onClick={() => this.handleClick('re')}>Register</a>
+                                <Link onClick={() => this.handleClick('re')}>Register</Link>
                             </div>
                         </div>
                         {body}

@@ -3,6 +3,8 @@ import Header from '../Header_Footer/Header';
 import Footer from '../Header_Footer/Footer';
 import Navigation from '../Navigation/Navigation';
 import Modal from '../LoginModal/Modal';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Layout extends Component{
     constructor(props) {
@@ -24,6 +26,7 @@ class Layout extends Component{
                 <Header showModal = {this.showModal}/>
                     <Navigation />
                     {this.props.children}
+                <ToastContainer />
                 <Footer />
                 <Modal
                     show = {showModal}

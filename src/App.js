@@ -1,40 +1,25 @@
 import React, { Component } from 'react';
-import {ToastContainer} from 'react-toastify';
-import Layout from './components/Layout/Layout';
-import routes from './routes';
 import { Route, Switch } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
+import HomePage from './components/HomePage/HomePage';
+import DetailPage from './components/DetailPage/Detail';
+import CheckOut from './components/CheckOut/CheckOut';
+import ProductByCategory from './components/ProductByCategory/ProductByCategory';
+import Cart from './components/Cart/Cart';
+import CompareProduct from './components/Compare/CompareProduct';
 
 class App extends Component {
   render() {
     return (
-      <Layout>
-        <ToastContainer />
-        {this.showContent(routes)}
-      </Layout>
+      <Switch>
+        <Route path= '/' exact= {true} component={HomePage} />
+        <Route path= '/Detail/:id' exact= {false} component={DetailPage} />
+        <Route path= '/Checkout' exact= {false} component={CheckOut} />
+        <Route path= '/ProductByCategory' exact= {false} component={ProductByCategory} />
+        <Route path= '/Cart' exact= {false} component={Cart} />
+        <Route path= '/Compare' exact= {false} component={CompareProduct} />
+      </Switch>
     );
   }
-
-  showContent = (routes) => {
-    var result = null;
-    if (routes.length > 0) {
-      result = routes.map((route, index) => {
-        return (
-          <Route
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={route.main}
-          />
-        );
-      })
-    }
-    return (
-      <Switch>{result}
-      </Switch>
-    )
-  }
-
 }
 
 export default App;

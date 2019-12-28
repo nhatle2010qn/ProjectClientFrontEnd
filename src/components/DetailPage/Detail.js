@@ -6,6 +6,7 @@ import {getCommentData, getRating} from '../../actions/commentAction';
 import { connect } from 'react-redux';
 import Product from './Product';
 import ProductList from '../Product/ProductList';
+import Layout from '../Layout/Layout';
 
 class DetailPage extends Component {
     constructor(props) {
@@ -42,7 +43,8 @@ class DetailPage extends Component {
 
     render() {
         return (
-            <div>
+            <Layout>
+                <div>
                 <BreadCrumb />
                 <div className="section">
                     <div className="container">
@@ -62,6 +64,8 @@ class DetailPage extends Component {
                     </div>
                 </div>
             </div>
+            </Layout>
+            
         )
     }
 }

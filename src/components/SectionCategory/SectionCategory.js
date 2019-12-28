@@ -14,7 +14,6 @@ class SectionCategory extends Component{
 							</div>
 							<div className="shop-body">
 								<h3>Laptop<br />Collection</h3>
-								<a href="#"></a>
 								<Link to='/ProductByCategory' className="cta-btn">Shop now <i className="fa fa-arrow-circle-right"></i></Link>
 							</div>
 						</div>

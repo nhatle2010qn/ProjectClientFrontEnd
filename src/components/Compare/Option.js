@@ -34,12 +34,12 @@ class Option extends Component {
             <tr>
                 <th scope="row">{option.name}</th>
                 <td className="val">{option1 ? option1.map(element => {
-                    if (element.id == option.id) {
+                    if (element.id === option.id) {
                         return element.value
                     }
                 }) : ''}</td>
                 <td className="val">{option2 ? option2.map(element => {
-                    if (element.id == option.id) {
+                    if (element.id === option.id) {
                         return element.value
                     }
                 }) : ''}</td>

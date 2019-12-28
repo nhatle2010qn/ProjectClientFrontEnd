@@ -31,7 +31,7 @@ class SideBar extends Component {
         }
     }
     getCategoryCheckBox = async (id, bool) => {
-        const { activePage, pageSize, search } = this.props;
+        const {pageSize, search } = this.props;
         const {checkedItems, minPrice, maxPrice} = this.state;
         var i = [];
         checkedItems.set(id,bool);
@@ -39,7 +39,7 @@ class SideBar extends Component {
             checkedItems
         });
         for (var [key, value] of this.state.checkedItems) {
-            if (value == true) {
+            if (value === true) {
                 i.push((key));
             }
         }
@@ -49,7 +49,7 @@ class SideBar extends Component {
 
     }
     onChangePrice = async (values) => {
-        const { activePage, pageSize, search } = this.props;
+        const {pageSize, search } = this.props;
         if (values.values) {
             var i = [];
             this.props.callBackPrice(values.values[0],values.values[1])
@@ -58,7 +58,7 @@ class SideBar extends Component {
                 maxPrice: values.values[1]
             });
             for (var [key, value] of this.state.checkedItems) {
-                if (value == true) {
+                if (value === true) {
                     i.push((key));
                 }
             }

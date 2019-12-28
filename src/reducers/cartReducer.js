@@ -16,7 +16,7 @@ export default function (state = initialState, action) {
             let existed_item = state.addedItems.find(item => action.cart.id === item.id)
             if (existed_item) {
                 for (var i = 0; i < state.addedItems.length; i++) {
-                    if (existed_item.id == state.addedItems[i].id) {
+                    if (existed_item.id === state.addedItems[i].id) {
                         state.addedItems[i].quantity = parseInt(state.addedItems[i].quantity) + action.cart.quantity
                     }
                 }
@@ -47,39 +47,34 @@ export default function (state = initialState, action) {
                 return state
             }
         case ADD_QUANTITY:
-            if (cart) {
-                state = JSON.parse(cart);
-                for (var i = 0; i < state.addedItems.length; i++) {
-                    if (action.id == state.addedItems[i].id) {
-                        state.addedItems[i].quantity = action.quantity
-                        console.log(state.addedItems[i])
-                    }
-                }
-                state.total = 0;
-                for (var j = 0; j < state.addedItems.length; j++) {
-                    state.total += state.addedItems[j].quantity * state.addedItems[j].productPrice
-                }
-                localStorage.setItem('myCart', JSON.stringify(state))
-                return {
-                    ...state,
+            state = JSON.parse(cart);
+            for (var k = 0; k < state.addedItems.length; k++) {
+                if (action.id === state.addedItems[k].id) {
+                    state.addedItems[k].quantity = action.quantity
                 }
             }
+            state.total = 0;
+            for (var j = 0; j < state.addedItems.length; j++) {
+                state.total += state.addedItems[j].quantity * state.addedItems[j].productPrice
+            }
+            localStorage.setItem('myCart', JSON.stringify(state))
+            return {
+                ...state,
+            }
         case REMOVE_PRODUCT:
-            if (cart) {
-                state = JSON.parse(cart);
-                for (var i = 0; i < state.addedItems.length; i++) {
-                    if (action.id == state.addedItems[i].id) {
-                        state.addedItems.splice(i, 1);
-                    }
+            state = JSON.parse(cart);
+            for (var h = 0; h < state.addedItems.length; h++) {
+                if (action.id === state.addedItems[h].id) {
+                    state.addedItems.splice(h, 1);
                 }
-                state.total = 0;
-                for (var j = 0; j < state.addedItems.length; j++) {
-                    state.total += state.addedItems[j].quantity * state.addedItems[j].productPrice
-                }
-                localStorage.setItem('myCart', JSON.stringify(state))
-                return {
-                    ...state,
-                }
+            }
+            state.total = 0;
+            for (var m = 0; m < state.addedItems.length; m++) {
+                state.total += state.addedItems[m].quantity * state.addedItems[m].productPrice
+            }
+            localStorage.setItem('myCart', JSON.stringify(state))
+            return {
+                ...state,
             }
         case DELETE_CART:
             localStorage.removeItem('myCart');
@@ -87,7 +82,7 @@ export default function (state = initialState, action) {
                 addedItems: [],
                 total: 0
             }
-            return{
+            return {
                 ...state
             }
         default:

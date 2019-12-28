@@ -53,19 +53,19 @@ class Header extends Component {
 	}
 
 	render() {
-		const { carts, showModal } = this.state;
+		const { carts } = this.state;
 		return (
 			<header>
 				<div id="top-header">
 					<div className="container">
 						<ul className="header-links pull-left">
-							<li><a href="#"><i className="fa fa-phone"></i> +021-95-51-84</a></li>
-							<li><a href="#"><i className="fa fa-envelope-o"></i> email@email.com</a></li>
-							<li><a href="#"><i className="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+							<li><Link><i className="fa fa-phone"></i> +021-95-51-84</Link></li>
+							<li><Link><i className="fa fa-envelope-o"></i> email@email.com</Link></li>
+							<li><Link><i className="fa fa-map-marker"></i> 1734 Stonecoal Road</Link></li>
 						</ul>
 						<ul className="header-links pull-right">
-							<li><a href="#"><i className="fa fa-dollar"></i> USD</a></li>
-							<li><a onClick={this.handleClickModal}><i className="fa fa-user-o"></i> My Account</a></li>
+							<li><Link><i className="fa fa-dollar"></i> USD</Link></li>
+							<li><Link onClick={this.handleClickModal}><i className="fa fa-user-o"></i> My Account</Link></li>
 						</ul>
 					</div>
 				</div>
@@ -74,9 +74,9 @@ class Header extends Component {
 						<div className="row">
 							<div className="col-md-3">
 								<div className="header-logo">
-									<a href="#" className="logo">
-										<img src="./img/logo.png" onClick={this.onClickLogo} />
-									</a>
+									<Link className="logo">
+										<img src="./img/logo.png" onClick={this.onClickLogo} alt="logo"/>
+									</Link>
 								</div>
 							</div>
 							<div className="col-md-6">
@@ -98,18 +98,18 @@ class Header extends Component {
 										</a> */}
 									</div>
 									<div className="dropdown">
-										<a className="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<Link className="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 											<i className="fa fa-shopping-cart"></i>
 											<span>Your Cart</span>
 											<div className="qty">{carts.addedItems.length}</div>
-										</a>
+										</Link>
 										<CartList carts={carts} />
 									</div>
 									<div className="menu-toggle">
-										<a href="#">
+										<Link>
 											<i className="fa fa-bars"></i>
 											<span>Menu</span>
-										</a>
+										</Link>
 									</div>
 								</div>
 							</div>

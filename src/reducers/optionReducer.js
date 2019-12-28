@@ -26,10 +26,10 @@ export default function (state = initialState, action) {
                 if(action.payload == null){
                     toast.error('The product is not config');
                 }
-                else if (option1[0].productId == action.payload[0].productId) {
+                else if (option1[0].productId === action.payload[0].productId) {
                     toast.error('The product is exist');
                 }
-                else if (option2 == null) {
+                else if (option2 === null) {
                     localStorage.setItem('option2', JSON.stringify(action.payload));
                     localStorage.setItem('product2', JSON.stringify(action.product));
                     toast.success('The product is added in compare product');
@@ -63,7 +63,7 @@ export default function (state = initialState, action) {
                 value2: detail2
             }
         case REMOVE_OPTION:
-            if (action.id == 1) {
+            if (action.id === 1) {
                 localStorage.removeItem('option1');
                 localStorage.removeItem('product1');
                 if (option2) {
@@ -73,7 +73,7 @@ export default function (state = initialState, action) {
                     localStorage.removeItem('product2');
                 }
             }
-            if(action.id == 2){
+            if(action.id === 2){
                 localStorage.removeItem('option2');
                 localStorage.removeItem('product2');
             }

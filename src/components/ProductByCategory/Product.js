@@ -36,7 +36,7 @@ class Product extends Component {
     }
     loadCategory = () => {
         for (var i = 0; i < this.props.category.length; i++) {
-            if (this.props.category[i].id == this.props.product.categoryId) {
+            if (this.props.category[i].id === this.props.product.categoryId) {
                 return this.props.category[i].name
             }
         }

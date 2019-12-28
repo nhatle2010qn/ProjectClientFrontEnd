@@ -23,7 +23,7 @@ class RegisterModal extends Component {
     handleRegister = (ev) => {
         const { usrname, email, psw, conpsw } = this.state;
         ev.preventDefault();
-        if (psw == conpsw) {
+        if (psw === conpsw) {
             const register = {
                 'name' : usrname,
                 'email': email,
@@ -65,7 +65,7 @@ class RegisterModal extends Component {
         });
     }
     render() {
-        const { usrname, email, psw, conpsw, usrerr,emailerr,pswerr,conperr } = this.state;
+        const { usrname, email, psw, conpsw, usrerr} = this.state;
         return (
             <div className="modal-body" >
                 <form className="needs-validation" noValidate>

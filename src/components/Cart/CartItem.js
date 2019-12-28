@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { addQuantity, loadProductInCart, removeProduct } from '../../actions/cartAction';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom';
 
 class CartItem extends Component {
     constructor(props) {
@@ -33,10 +34,11 @@ class CartItem extends Component {
             <tr >
                 <td className="col-sm-8 col-md-6">
                     <div className="media">
-                        <a className="thumbnail pull-left" href="#"> <img className="media-object" src={"http://localhost:44322/wwwroot/Image/Products/" + cart.mainUrl} style={{ width: "72px", height: "72px" }} /> </a>
+                        <Link className="thumbnail pull-left"> <img className="media-object" src={"http://localhost:44322/wwwroot/Image/Products/" + cart.mainUrl} 
+                                                                style={{ width: "72px", height: "72px" }} alt={cart.productName}/> </Link>
                         <div className="media-body">
-                            <h4 className="media-heading"><a href="#">{cart.productName}</a></h4>
-                            <h5 className="media-heading"> by <a href="#">Brand name</a></h5>
+                            <h4 className="media-heading"><Link>{cart.productName}</Link></h4>
+                            <h5 className="media-heading"> by <Link>Brand name</Link></h5>
                             <span>Status: </span><span className="text-success"><strong>In Stock</strong></span>
                         </div>
                     </div></td>

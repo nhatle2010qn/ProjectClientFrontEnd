@@ -4,7 +4,7 @@ import Review from './Review';
 import CommentList from './CommentList';
 import { addProductToCart, loadProductInCart } from '../../actions/cartAction';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import StarRatings from 'react-star-ratings';
 
 class Product extends Component {
@@ -81,7 +81,7 @@ class Product extends Component {
                                   starDimension="20px"
                                   starSpacing="5px"
                                 />
-                                <a className="review-link" href="#">{comment.length} Review(s) | Add your review</a>
+                                <Link className="review-link">{comment.length} Review(s) | Add your review</Link>
                             </div>
                             <div>
                                 <h3 className="product-price">${product.price} </h3>
@@ -104,13 +104,13 @@ class Product extends Component {
                             </div>
 
                             <ul className="product-btns">
-                                <li><a href="#"><i className="fa fa-heart-o"></i> add to wishlist</a></li>
-                                <li><a href="#"><i className="fa fa-exchange"></i> add to compare</a></li>
+                                <li><Link><i className="fa fa-heart-o"></i> add to wishlist</Link></li>
+                                <li><Link><i className="fa fa-exchange"></i> add to compare</Link></li>
                             </ul>
 
                             <ul className="product-links">
                                 <li>Category:</li>
-                                <li><a href="#">Laptop</a></li>
+                                <li><Link>Laptop</Link></li>
 
                             </ul>
                         </div>
@@ -119,8 +119,8 @@ class Product extends Component {
                         <div id="product-tab">
                             <ul className="tab-nav">
                                 <li className="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-                                <li><a data-toggle="tab" href="#tab2">Details</a></li>
-                                <li><a data-toggle="tab" href="#tab3">Reviews {comment.length}</a></li>
+                                <li><Link data-toggle="tab">Details</Link></li>
+                                <li><Link data-toggle="tab">Reviews {comment.length}</Link></li>
                             </ul>
                             <div className="tab-content">
                                 <div id="tab1" className="tab-pane fade in active">
